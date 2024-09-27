@@ -15,9 +15,6 @@ This is a backend API developed using **Express** and **Deno** to support a Chro
 ## Features
 
 - List all repositories for a user
-- Create new repositories
-- Update existing repositories
-- Delete repositories
 - Authentication with GitHub API
 
 ## Technologies
