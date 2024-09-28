@@ -2,17 +2,19 @@
   "name": "github-repo-manager-api",
   "version": "1.0.0",
   "description": "This is a backend API developed using **Express** and **Deno** to support a Chrome extension that helps users manage their GitHub repositories. The API provides endpoints for listing, creating, updating, and deleting repositories.",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "Arpit Sharma",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "mongoose": "^8.7.0"
