@@ -5,7 +5,7 @@ const corsOptions = {
     origin: [
         'https://github.com',
         'http://localhost:5000',
-        "chrome-extension://your-extension-id"
+        "chrome-extension://fbndlohilpfikloelcfjnkhgaongemef"
         // add other allowed origins here
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],

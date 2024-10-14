@@ -1,5 +1,25 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
+
+const repoSchema = new mongoose.Schema({
+    repoName: {
+        type: String,
+        required: false,
+    },
+    link: {
+        type: String,
+        required: false,
+    }
+})
+const categorySchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    repos: {
+        type: [repoSchema],
+        required: false,
+    },
+});
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -11,16 +31,15 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    password: {
+    login: {
         type: String,
         required: true,
+        unique: true,
     },
+    category: {
+        type: [categorySchema], 
+        required: false,
+    }
 },{collection: 'users'});
-
-userSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) return next();
-    this.password = await bcrypt.hash(this.password, await bcrypt.genSalt(10));
-    next();
-});
 
 export default mongoose.model("User", userSchema);

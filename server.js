@@ -9,7 +9,7 @@ import { PORT } from './src/config/config.js'; // Import the server port from th
 const app = express();
 
 app.use(express.json()); // Middleware to parse JSON request bodies
-app.use("/api/users", user_route); 
+app.use("/users", user_route); 
 app.use("/auth", github_oauth_route);
 app.use(cors);
 app.use(morgan('combined'));
